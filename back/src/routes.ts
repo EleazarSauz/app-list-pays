@@ -1,10 +1,9 @@
 import server from 'express';
-import { test } from './controllers';
+import { payment } from './controllers';
 
 const router = server.Router();
 
-router.get('/test', test);
-router.post('/test', test);
+router.post('/payment', payment);
 
 
 export default router;

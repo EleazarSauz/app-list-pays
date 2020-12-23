@@ -1,8 +1,14 @@
+import { Payment } from './models';
 
-const test = (req, res) => {
-    return res.status(200).json({
-        message: 'Welcome'
-    });
-};
+const payment = async (req, res) => {
 
-export { test }
+    try {
+        const newPayment = new Payment(req.body);
+
+        return res.status(201).json(await newPayment.save());
+    } catch (e) {
+        res.status(500).json(e);
+    }
+}
+
+export { payment }
