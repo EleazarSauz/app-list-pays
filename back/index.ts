@@ -13,7 +13,7 @@ async function main() {
     server.use('/v1', router);
 
     server.listen(port, () => {
-        console.log(`Example app listening at http://localhost:${port}`)
+        console.log(`app listening at http://localhost:${port}`)
     })
 
     try {

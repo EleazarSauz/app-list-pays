@@ -19,7 +19,7 @@ return (
         <section className="text-gray-700 body-font relative">
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-col text-center w-full mb-12">
-                    <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Add new pay</h1>
+                    <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Add new payment</h1>
                 </div>
                 <form className=" mx-auto max-w-xl" onSubmit={handleSubmit(onSubmit)}>
                     <div className="flex flex-wrap -m-2">
@@ -65,13 +65,13 @@ return (
                         </div>
                         
                         <div className="p-2 w-full">
-                            <button type="submit" disabled={isLoading} className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                                Add.
+                            <button type="submit" disabled={isLoading} className="flex mx-auto text-white bg-green-500 border-0 py-3 px-8 focus:outline-none hover:bg-green-700 rounded text-lg">
+                                Add &nbsp;
                                 {
                                     isLoading ? 
                                     <i className="fas fa-lg fa-spinner fa-spin" />
                                     :
-                                    <i className="fas fa-lg fa-paper-plane" />
+                                    <i className="fas fa-lg fa-plus" />
                                 }
                             </button>
                         </div>
