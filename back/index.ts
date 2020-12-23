@@ -10,7 +10,7 @@ async function main() {
     server.use(express.json());
     server.use(cors());
 
-    server.use('/', router);
+    server.use('/v1', router);
 
     server.listen(port, () => {
         console.log(`Example app listening at http://localhost:${port}`)
