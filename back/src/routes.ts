@@ -1,9 +1,11 @@
 import server from 'express';
-import { payment } from './controllers';
+import { newPayment, listPayment } from './controllers';
 
 const router = server.Router();
 
-router.post('/payment', payment);
+router.post('/payment', newPayment);
+
+router.get('/payment', listPayment);
 
 
 export default router;
