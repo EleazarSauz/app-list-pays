@@ -17,7 +17,7 @@ const listPayment = async (req: Request, res: Response) => {
     const limit: number = Number(req.query.limit) || 10;
     const page: number = Number(req.query.page) || 1;
     try {
-        const listPayment = await Payment.paginate({},{ limit, page })
+        const listPayment = await Payment.paginate({ limit, page })
         
         return res.status(200).json(listPayment);
     } catch (error) {

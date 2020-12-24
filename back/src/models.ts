@@ -1,7 +1,8 @@
-import { Schema, model, Document, PaginateModel } from 'mongoose';
-import mongoosePaginate from 'mongoose-paginate-v2';
+import { Schema, model, Document } from 'mongoose';
 
-export interface IPaymnet extends Document {
+import { mongoosePagination, Pagination } from 'mongoose-paginate-ts';
+
+type Payment = Document & {
     creator: string;
     kind: string;
     amountCurrencyCode: string;
@@ -42,9 +43,8 @@ const paymentSchema: Schema = new Schema(
     }
 )
 
-paymentSchema.plugin(mongoosePaginate);
-interface PaymnetModel<T extends Document> extends PaginateModel<T> { }
+paymentSchema.plugin(mongoosePagination);
 
-const Payment: PaymnetModel<IPaymnet> = model<IPaymnet>('payment', paymentSchema);
+const Payment: Pagination<Payment> = model<Payment, Pagination<Payment>>('payments', paymentSchema);
 
 export { Payment }
