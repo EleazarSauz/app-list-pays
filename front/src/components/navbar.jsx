@@ -8,7 +8,7 @@ function NavBar() {
     <div>
         <div className="w-full text-gray-700 bg-white">
             <div className="flex max-w-screen-xl px-4 mx-auto items-center justify-between flex-row px-6 lg:px-8">
-                <div className="p-4 flex flex-row items-center justify-between">
+                <div className="p-2 flex flex-row items-center justify-between">
                     <NavLink to="/">
                         <img src={logo} className="App-logo" alt="logo" />
                     </NavLink>
