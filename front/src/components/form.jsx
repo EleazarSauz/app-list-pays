@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import ReactJson from 'react-json-view'
 
     
 function Form() {
     const { register, handleSubmit, errors, reset } = useForm();
     const [isLoading, setIsLoading] = useState(false)
+    const [postPayment, setPostPayment] = useState(null)
     const onSubmit = data => {
         setIsLoading(true)
         var myHeaders = new Headers();
@@ -22,6 +24,7 @@ function Form() {
         fetch("http://localhost:3001/v1/payment", requestOptions)
             .then(res => res.text())
             .then(result => {
+                setPostPayment(result)
                 console.log(result)
                 setIsLoading(false)
                 reset()
@@ -111,6 +114,16 @@ return (
                                 }
                             </button>
                         </div>
+                    {
+                        postPayment &&
+                        <div className="bg-green-200 p-6 rounded-lg mx-auto mt-2">
+                            <div className="flex items-center justify-between">
+                                <p className="text-gray-400 text-xl mb-2 text-center"> Payment created successfully </p>
+                                    <i className="fas fa-lg fa-backspace text-red-400" onClick={() => setPostPayment(null)} />
+                            </div>
+                            <ReactJson src={JSON.parse(postPayment)} />
+                        </div>
+                    }
                     </div>
                 </form>
             </div>

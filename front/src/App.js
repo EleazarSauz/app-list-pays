@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import './tailwind.css';
 import Form from './components/form';
