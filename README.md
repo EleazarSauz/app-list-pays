@@ -28,11 +28,11 @@ Open frontend [http://localhost:3000](http://localhost:3000) with your browser t
 And run backend server in [http://localhost:3001](http://localhost:3001)
 
 ## Demo
-See demo [here](https://app-payments1234.web.app//)
+See demo [here](https://app-payments1234.web.app/)
 
 ## tech used:
 
-- [ReactJS](https://reactjs.org/l)
+- [ReactJS](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com)
 - [MongoDB](https://www.mongodb.com/)
 - [Express](http://expressjs.com/)
