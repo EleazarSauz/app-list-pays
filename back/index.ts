@@ -6,7 +6,7 @@ import router from './src/routes'
 async function main() {
 
     const server = express()
-    const port: number = 3001;
+    const port: number = Number(process.env.PORT) || 3001;
     server.use(express.json());
     server.use(cors());
 
